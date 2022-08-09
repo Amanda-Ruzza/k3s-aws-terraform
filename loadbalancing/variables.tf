@@ -4,14 +4,16 @@ variable "public_sg" {}
 
 variable "public_subnets" {}
 
-# variable "tg_port" {}
+variable "vpc_id" {}
 
-# variable "tg_protocol" {}
+variable "tg_port" {}
 
-# variable "lb_healthy_threshold" {}
+variable "tg_protocol" {}
 
-# variable "lb_unhealthy_threshold" {}
+variable "lb_healthy_threshold" {}
 
-# variable "lb_timeout" {}
+variable "lb_unhealthy_threshold" {}
 
-# variable "lb_interval" {}
+variable "lb_timeout" {}
+
+variable "lb_interval" {}

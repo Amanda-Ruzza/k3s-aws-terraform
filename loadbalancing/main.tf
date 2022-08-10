@@ -17,6 +17,10 @@ resource "aws_lb_target_group" "k3s_tg" {
   port     = var.tg_port
   protocol = var.tg_protocol
   vpc_id   = var.vpc_id
+  lifecycle {
+    ignore_changes = [name] #This 'Lifecycle Ignore Changes Policy' will make TF keep redeploying a new LB everytime I redeploy the code because of the 'substring uuid' name function
+    create_before_destroy = true #This is to ensure that a new TG is created before the current one is destroyed
+  }
   health_check {
     healthy_threshold   = var.lb_healthy_threshold
     unhealthy_threshold = var.lb_unhealthy_threshold

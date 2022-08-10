@@ -19,6 +19,9 @@ Used the following:
 - Created an RDS instance, as K3s allows a standard SQL database to store data, instead of the ‘etcd’ data store for Kubernetes
 - Created and ALB Module that deployed an Application Load Balancer in the Public Security Group that will forward traffic from port 80 into the EC2 [K3s] instances
 - Combined the substring (substr) + UUID functions to generate a Unique ID for the ALB Target Group [For example: > substr(uuid(), 0, 4) results in: “c4f5” which are 4 items on the large main uuid unique id generator]
+- Created a Compute Module for the EC2 instances
+- Used the TF aws_ami 'Data Source' to search and filter AMI's available in the deployment's region
+- Deployed the EC2 intances with a 'Ubuntu 18.04 AMI'
 
 
 ——
